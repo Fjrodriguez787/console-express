@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gaming Consoles</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section>
+    <h1>Compare these Gaming Consoles</h1>
+    <h2>Which is better?</h2>
+    <img src="https://www.extremetech.com/wp-content/uploads/2016/11/515651-ps4-pro-hands-on-640x360.jpg" alt="">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6s2Xzk6JuhKDdjmYdstW2p9ap41l3w9blImy_0oynQx18VUaTiQ" alt="">
+    <img src="https://cf1.s3.souqcdn.com/item/2017/01/17/12/42/02/48/item_XL_12420248_18720239.jpg" alt="">
+  </section>
+
+  <section class="two">
+    <h3>Comments</h3>
+
+    <ul class="messages">
+    <% for(var i=0; i<messages.length; i++) {%>
+      <li class="message">
+        <span><%= messages[i].name %></span>
+        <span><%= messages[i].msg %></span>
+        <span><%= messages[i].thumbUp %></span>
+        <span><%= messages[i].thumbDown %></span>
+        <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+        <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
+        <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+      </li>
+    <% } %>
+    </ul>
+
+    <h2>Add a message</h2>
+
+    <form class="form" action="/messages" method="POST">
+      <input type="text" placeholder="name" name="name">
+      <input type="text" placeholder="message" name="msg">
+      <button type="submit">Submit</button>
+    </form>
+
+
+  </section>
+
+
+  <script src="main.js"></script>
+
+</body>
+</html>
